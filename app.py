@@ -1,4 +1,3 @@
-
 from flask import Flask, request, jsonify
 import datetime
 
@@ -7,8 +6,8 @@ app = Flask(__name__)
 @app.route('/api', methods=['GET'])
 def get_info():
     # Get query parameters
-    slack_name = request.args.get('slack_name')
-    track = request.args.get('track')
+    slack_name = request.args.get("slack_name")
+    track = request.args.get("track")
 
     # Get the current day of the week
     current_day = datetime.datetime.now().strftime('%A')
@@ -18,7 +17,7 @@ def get_info():
 
     # Construct GitHub URLs
     github_file_url = 'https://github.com/username/repo/blob/main/file_name.ext'
-    github_repo_url = 'https://github.com/username/repo'
+    github_repo_url = 'https://github.com/ayoblvck/backend_projs/blob/main/first_file'
 
     # Prepare the response JSON
     response_data = {
