@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import datetime
 
 app = Flask(__name__)
+# slack_name=maryam&track=backend
 
 @app.route('/api', methods=['GET'])
 def get_info():
@@ -16,8 +17,8 @@ def get_info():
     current_utc_time = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
 
     # Construct GitHub URLs
-    github_file_url = 'https://github.com/username/repo/blob/main/file_name.ext'
-    github_repo_url = 'https://github.com/ayoblvck/backend_projs/blob/main/first_file'
+    github_repo_url = 'https://github.com/ayoblvck/backend_projs'
+    github_file_url = 'https://github.com/ayoblvck/backend_projs/blob/main/app.py'
 
     # Prepare the response JSON
     response_data = {
