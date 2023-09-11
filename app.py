@@ -10,17 +10,16 @@ def get_info():
     slack_name = request.args.get("slack_name")
     track = request.args.get("track")
 
-    # Get the current day of the week
+    # Get the current day and time of the week
     current_day = datetime.datetime.now().strftime('%A')
 
-    # Get the current UTC time, accurate within a +/-2 minute window
     current_utc_time = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
 
-    # Construct GitHub URLs
+    # Get GitHub URLs
     github_repo_url = 'https://github.com/ayoblvck/backend_projs'
     github_file_url = 'https://github.com/ayoblvck/backend_projs/blob/main/app.py'
 
-    # Prepare the response JSON
+    # response JSON
     response_data = {
         "slack_name": slack_name,
         "current_day": current_day,
@@ -34,4 +33,4 @@ def get_info():
     return jsonify(response_data)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(debug=True)
